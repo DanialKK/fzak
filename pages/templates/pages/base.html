@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}سایت شرکتی{% endblock %}</title>
+
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+    {% include "pages/partials/navbar.html" %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include "pages/partials/footer.html" %}
+
+</body>
+</html>
