@@ -1,18 +1,19 @@
 from django.shortcuts import render, redirect
 from .forms import Leadform
-from .models import Product
-from .models import Certification
+from .models import Product, Certification
+
 
 def home(request):
-    product = Product.objects.prefetch_related(
-        "images",
-        "sections__images",
-        "sections__specs"
-    ).first()
+    products = (
+        Product.objects
+        .prefetch_related("images")
+        .order_by("order")[:5]
+    )
 
     return render(request, "pages/home.html", {
-        "product": product
+        "products": products,
     })
+
 
 
 def about(request):
