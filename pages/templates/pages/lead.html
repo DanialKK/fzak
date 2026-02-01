@@ -1,0 +1,32 @@
+{% extends "pages/base.html" %}
+{% block title %}فرم درخواست مشاوره{% endblock %}
+
+{% block content %}
+<h1>درخواست مشاوره فوری و رایگان</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    <div>
+        {{ form.name.label_tag }}
+        {{ form.name }}
+    </div>
+
+    <div>
+        {{ form.phone.label_tag }}
+        {{ form.phone }}
+    </div>
+
+    <div>
+        {{ form.email.label_tag }}
+        {{ form.email }}
+    </div>
+
+    <div>
+        {{ form.message.label_tag }}
+        {{ form.message }}
+    </div>
+
+    <button type="submit">ارسال</button>
+</form>
+{% endblock %}

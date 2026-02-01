@@ -1,0 +1,18 @@
+<h1>مجوزها و گواهی‌ها</h1>
+
+<div class="certifications">
+    {% for item in items %}
+        <div class="cert-card">
+            <img src="{{ item.image.url }}" alt="{{ item.title }}">
+            <h3>{{ item.title }}</h3>
+
+            {% if item.issuer %}
+                <p><strong>مرجع صادرکننده:</strong> {{ item.issuer }}</p>
+            {% endif %}
+
+            {% if item.description %}
+                <p>{{ item.description }}</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
