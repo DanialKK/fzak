@@ -1,5 +1,9 @@
-<h1>مجوزها و گواهی‌ها</h1>
+{% extends "pages/base.html" %}
 
+{% block title %}صفحه مجوزها و گواهی‌ها{% endblock %}
+
+{% block content %}
+<h1>مجوزها و گواهی‌ها</h1>
 <div class="certifications">
     {% for item in items %}
         <div class="cert-card">
@@ -16,3 +20,4 @@
         </div>
     {% endfor %}
 </div>
+{% endblock %}

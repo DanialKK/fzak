@@ -3,6 +3,59 @@
 {% block title %}صفحه اصلی{% endblock %}
 
 {% block content %}
-    <h1>به سایت ما خوش آمدید 🚀</h1>
-    <p>ما خدمات حرفه‌ای ارائه می‌دهیم.</p>
+<h1>زلال آب کاوه</h1>
+<p>تولید کننده انواع پکیج های تصفیه فاضلاب هوازی و بی هوازی</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for product in products %}
+        <div class="product-card bg-white rounded-xl shadow p-4 mb-6">
+            <h2 class="text-xl font-semibold mb-2">{{ product.title }}</h2>
+
+            <!-- توضیحات کامل محصول -->
+            <p class="text-gray-600 mb-4">{{ product.description }}</p>
+
+            <!-- گالری تصاویر -->
+            {% if product.images.exists %}
+            <div class="images flex gap-2 mb-4">
+                {% for image in product.images.all %}
+                    <img src="{{ image.image.url }}" class="w-24 h-24 object-cover rounded">
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <!-- جدول مشخصات فنی -->
+            {% if product.specs_table %}
+                <div class="prose max-w-none">
+                    {{ product.specs_table|safe }}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
 {% endblock %}
+
+
+<!--<div class="product-gallery grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">-->
+<!--    {% for image in product.images.all %}-->
+<!--        <img src="{{ image.image.url }}" class="w-full h-48 object-cover rounded">-->
+<!--    {% endfor %}-->
+<!--</div>-->
+
+<!--{% for section in product.sections.all %}-->
+<!--    <h3>{{ section.title }}</h3>-->
+<!--    <p>{{ section.content }}</p>-->
+<!--    <div class="flex gap-2">-->
+<!--        {% for image in section.images.all %}-->
+<!--            <img src="{{ image.image.url }}" class="w-24 h-24 object-cover rounded">-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--    {% for spec in section.specs.all %}-->
+<!--        <p>{{ spec.name }}: {{ spec.value }}</p>-->
+<!--    {% endfor %}-->
+<!--{% endfor %}-->
+
+<!--{% if product.specs_table %}-->
+<!--    <div class="prose max-w-none">-->
+<!--        {{ product.specs_table|safe }}-->
+<!--    </div>-->
+<!--{% endif %}-->
