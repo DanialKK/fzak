@@ -1,4 +1,7 @@
 from django.contrib import admin
+from datetime import datetime
+import jdatetime
+
 from .models import (
     Lead,
     Product,
@@ -10,16 +13,21 @@ from .models import (
 )
 
 
-# =======================
-# Lead Admin
-# =======================
 @admin.register(Lead)
 class LeadAdmin(admin.ModelAdmin):
-    list_display = ("name", "phone", "email", "created_at")
+    list_display = ("name", "phone", "email", "jalali_created_at")
     list_filter = ("created_at",)
     search_fields = ("name", "phone", "email")
     readonly_fields = ("created_at",)
     ordering = ("-created_at",)
+
+    def jalali_created_at(self, obj):
+        return jdatetime.datetime.fromgregorian(
+            datetime=obj.created_at
+        ).strftime('%Y/%m/%d - %H:%M')
+
+    jalali_created_at.short_description = "تاریخ ثبت"
+
 
 
 # =======================
