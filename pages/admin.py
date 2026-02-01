@@ -1,14 +1,13 @@
 from django.contrib import admin
-from datetime import datetime
 import jdatetime
-
+from django import forms
+from ckeditor.widgets import CKEditorWidget
 from .models import (
     Lead,
     Product,
     ProductImage,
     ProductSection,
     ProductSectionImage,
-    ProductSectionSpec,
     Certification,
 )
 
@@ -39,6 +38,13 @@ class ProductImageInline(admin.TabularInline):
     fields = ("image", "order")
     ordering = ("order",)
 
+# ======== Form با CKEditor ========
+class ProductAdminForm(forms.ModelForm):
+    specs_table = forms.CharField(widget=CKEditorWidget(), required=False)
+
+    class Meta:
+        model = Product
+        fields = "__all__"
 
 class ProductSectionInline(admin.StackedInline):
     model = ProductSection
@@ -71,12 +77,6 @@ class ProductSectionImageInline(admin.TabularInline):
     ordering = ("order",)
 
 
-class ProductSectionSpecInline(admin.TabularInline):
-    model = ProductSectionSpec
-    extra = 1
-    fields = ("name", "value")
-
-
 # =======================
 # Product Section Admin
 # =======================
@@ -88,7 +88,6 @@ class ProductSectionAdmin(admin.ModelAdmin):
     ordering = ("product", "order")
     inlines = (
         ProductSectionImageInline,
-        ProductSectionSpecInline,
     )
 
 # =======================
