@@ -1,8 +1,7 @@
 asgiref==3.11.0
 Django==5.2.10
-sqlparse==0.5.5
-asgiref==3.11.0
-Django==5.2.10
+django-ckeditor==6.7.3
+django-js-asset==3.1.2
 jalali_core==1.0.0
 jdatetime==5.2.0
 pillow==12.1.0
