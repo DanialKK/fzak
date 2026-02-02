@@ -1,23 +1,66 @@
+{% load static %}
+{% load tailwind_tags %}
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}سایت شرکتی{% endblock %}</title>
+
+    <title>{% block title %}فرایند زلال آب کاوه{% endblock %}</title>
 
     <meta name="description" content="{% block description %}{% endblock %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.css">
+
+    {% tailwind_css %}
     {% block extra_head %}{% endblock %}
 </head>
-<body>
 
+<body class="font-['Vazirmatn'] min-h-screen flex flex-col bg-gray-50 text-gray-800">
+
+    {# Navbar #}
     {% include "pages/partials/navbar.html" %}
 
-    <main>
+    {# Main Content #}
+    <main class="flex-1 w-full max-w-7xl mx-auto px-4 py-6">
         {% block content %}{% endblock %}
     </main>
 
+    {# Footer #}
     {% include "pages/partials/footer.html" %}
 
+    {% block messages %}{% endblock %}
+    {% if messages %}
+<div
+    id="successModal"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+>
+    <div class="bg-white rounded-2xl shadow-xl max-w-sm w-full p-6 text-center">
+
+        <h2 class="text-lg font-semibold text-gray-800 mb-2">
+            ثبت شد ✔️
+        </h2>
+
+        {% for message in messages %}
+        <p class="text-gray-600 mb-6">
+            {{ message }}
+        </p>
+        {% endfor %}
+
+        <button
+            onclick="closeModal()"
+            class="px-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
+        >
+            متوجه شدم
+        </button>
+    </div>
+</div>
+
+<script>
+    function closeModal() {
+        document.getElementById('successModal').remove();
+    }
+</script>
+{% endif %}
 </body>
 </html>

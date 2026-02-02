@@ -1,0 +1,52 @@
+/* ===== Responsive Centered Table (Correct Way) ===== */
+
+/* wrapper فقط اسکرول */
+.prose {
+    overflow-x: auto;
+    width: 100%;
+}
+
+/* table */
+.prose table {
+    margin: 0 auto;
+    min-width: 600px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+/* header */
+.prose th {
+    background-color: #f9fafb;
+    font-weight: 600;
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* cells */
+.prose td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+}
+
+/* remove last row border */
+.prose tr:last-child td {
+    border-bottom: none;
+}
+
+/* hover */
+.prose tr:hover {
+    background-color: #f3f4f6;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    .prose table {
+        min-width: 520px;
+    }
+}

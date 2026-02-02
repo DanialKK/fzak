@@ -1,7 +1,64 @@
-<nav>
-    <a href="/">خانه</a>
-    <a href="/about/">درباره ما</a>
-    <a href="/certifications/">مجوز ها و گواهی ها</a>
-    <a href="/lead/">درخواست مشاوره</a>
-    <a href="https://blog.example.com">وبلاگ</a>
+<nav class="bg-white shadow-sm border-b">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+
+            <!-- Brand / Logo -->
+            <a href="/" class="text-lg font-extrabold text-blue-600">
+                زلال آب کاوه
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+                <a href="/about/" class="text-gray-700 hover:text-blue-600 transition">
+                    درباره ما
+                </a>
+                <a href="/certifications/" class="text-gray-700 hover:text-blue-600 transition">
+                    افتخارات و گواهی‌ها
+                </a>
+                <a href="https://blog.example.com"
+                   class="text-gray-700 hover:text-blue-600 transition"
+                   target="_blank">
+                    وبلاگ
+                </a>
+            </div>
+
+            <!-- CTA -->
+            <a href="/lead/"
+            class="mt-1 text-center px-4 py-2 rounded-lg
+            bg-blue-600 text-white
+            animate-pulse">
+            درخواست‌مشاوره
+            </a>
+
+
+            <!-- Mobile Button -->
+            <button onclick="toggleNavbar()"
+                    class="md:hidden text-gray-700 text-2xl focus:outline-none">
+                ☰
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileNavbar" class="hidden md:hidden border-t bg-white">
+        <div class="flex flex-col px-4 py-4 gap-3 text-sm">
+            <a href="/about/" class="text-gray-700">درباره ما</a>
+            <a href="/certifications/" class="text-gray-700">مجوزها و گواهی‌ها</a>
+            <a href="https://blog.example.com" class="text-gray-700">وبلاگ</a>
+
+            <a href="/lead/"
+            class="mt-2 text-center px-4 py-2 rounded-lg
+                    bg-blue-600 text-white
+                    animate-pulse">
+        مشاوره رایگان
+        </a>
+
+        </div>
+    </div>
 </nav>
+
+<script>
+    function toggleNavbar() {
+        document.getElementById('mobileNavbar').classList.toggle('hidden');
+    }
+</script>
