@@ -6,8 +6,6 @@ from .models import (
     Lead,
     Product,
     ProductImage,
-    ProductSection,
-    ProductSectionImage,
     Certification,
 )
 
@@ -46,13 +44,6 @@ class ProductAdminForm(forms.ModelForm):
         model = Product
         fields = "__all__"
 
-class ProductSectionInline(admin.StackedInline):
-    model = ProductSection
-    extra = 1
-    fields = ("title", "content", "order")
-    ordering = ("order",)
-    show_change_link = True
-
 
 # =======================
 # Product Admin
@@ -63,31 +54,6 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ("title",)
     inlines = (
         ProductImageInline,
-        ProductSectionInline,
-    )
-
-
-# =======================
-# Product Section Inlines
-# =======================
-class ProductSectionImageInline(admin.TabularInline):
-    model = ProductSectionImage
-    extra = 1
-    fields = ("image", "order")
-    ordering = ("order",)
-
-
-# =======================
-# Product Section Admin
-# =======================
-@admin.register(ProductSection)
-class ProductSectionAdmin(admin.ModelAdmin):
-    list_display = ("title", "product", "order")
-    list_filter = ("product",)
-    search_fields = ("title", "content")
-    ordering = ("product", "order")
-    inlines = (
-        ProductSectionImageInline,
     )
 
 # =======================

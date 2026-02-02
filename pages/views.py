@@ -1,5 +1,6 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
-from .forms import Leadform
+from .forms import LeadForm
 from .models import Product, Certification
 
 
@@ -27,11 +28,12 @@ def certifications(request):
 
 def lead(request):
     if request.method == 'POST':
-        form = Leadform(request.POST)
+        form = LeadForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'درخواست شما با موفقیت ثبت شد به زودی با شما از طریق شماره تماس وارد شده ارتباط میگیریم!')
             return redirect('lead')
     else:
-        form = Leadform()
+        form = LeadForm()
 
     return render(request, 'pages/lead.html', {'form': form})
