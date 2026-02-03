@@ -1,0 +1,158 @@
+@font-face {
+  font-family: 'IRANYekanXVF';
+  src: url(font/IRANYekanX/IRANYekanXVF.woff2) format("woff2-variations"),
+       url(font/IRANYekanX/IRANYekanXVF.woff2) format("woff2"); /* for older browsers */
+       font-weight: 400; font-style: normal;
+}
+
+/* Font */
+/* Editor V4 */
+body.elementor-editor-active :where(
+  div,
+  span,
+  label,
+  input,
+  textarea,
+  select,
+  button,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li
+):not(pre.elementor-code-editor):not(pre.elementor-code-editor *),
+body.elementor-editor-active .elementor-loading-title div {
+  font-family: "IRANYekanXVF", sans-serif !important;
+}
+
+.elementor-context-menu-list__item__shortcut, .elementor-context-menu-list__item__title {
+	line-height: 1.2!important;
+}
+.elementor-control .elementor-control-title {
+    line-height: 1.4!important;
+}
+
+.elementor-panel-heading-title,.elementor-nerd-box-title,.elementor-panel #elementor-panel-header {
+    font-variation-settings: 'wght' 700;
+    font-weight: 100!important;
+}
+.elementor-panel #elementor-panel-header-title {
+	font-weight: 100!important;
+    font-variation-settings: 'wght' 400;
+}
+input#elementor-panel-elements-search-input {
+    font-family: 'IRANYekanXVF';
+    direction: rtl;
+}
+.tipsy-inner {
+	font-family: IRANYekanXVF !important;
+	line-height:2
+}
+.elementor-loading-title {
+    letter-spacing: 0px !important;
+    font-size: 13px !important;
+}
+.elementor-hotkeys__item--shortcut span {
+    margin-inline-start: 27px;
+    margin-inline-end: 0px!important;
+}
+/* Font */
+
+label.elementor-switch.elementor-control-unit-2 {
+    direction: ltr;
+}
+
+#elementor-template-library-filter .select2-selection__rendered,
+#select2-elementor-template-library-filter-subtype-results .select2-results__option {
+    text-align: right;
+}
+#elementor-try-safe-mode .elementor-safe-mode-button {
+    font-family: IRANYekanXVF;
+    font-size: 10px;
+}
+button.dialog-button.dialog-cancel.dialog-confirm-cancel,
+button.dialog-button.dialog-ok.dialog-confirm-ok {
+    font-family: IRANYekanXVF;
+    font-size: 13px;
+}
+.elementor-panel .elementor-panel-alert {
+    border-right: 5px solid transparent;
+    border-left: 0 solid transparent !important;
+}
+.elementor-control.elementor-control-type-select .elementor-control-input-wrapper select,
+.elementor-navigator__element__title__text {
+    line-height: 2 !important;
+}
+.flatpickr-month {
+    height: 34px !important;
+}
+.flatpickr-calendar.animate.open.arrowTop,
+.flatpickr-calendar.animate.open.arrowBottom {
+    width: 280px;
+    direction: rtl;
+    font-family: IRANYekanXVF;
+}
+.flatpickr-current-month input.cur-year {
+    padding: 0 0.5ch 0 0 !important;
+    direction: ltr;
+}
+.flatpickr-current-month span.cur-month {
+    margin-right: 0.5ch;
+    margin-left: 0;
+}
+.e-global__color-hex,
+.e-global-colors__color-value {
+    font-family: Roboto, Arial, Helvetica, Verdana, sans-serif;
+}
+input.tooltip-target.elementor-control-tag-area,
+input.elementor-control-tag-area.elementor-input.ui-autocomplete-input {
+    font-family: "IRANYekanXVF";
+    height: 27px;
+}
+
+.elementor-control-align .elementor-choices {
+    flex-direction: row-reverse;
+}
+.elementor-control-align label.elementor-choices-label.elementor-control-unit-1.tooltip-target {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: 0px;
+}
+.elementor-control-align .elementor-choices .elementor-choices-label:last-child {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: 0px;
+    border-top-right-radius: var(--e-a-border-radius);
+    border-bottom-right-radius: var(--e-a-border-radius);
+}
+.elementor-control-align .elementor-choices .elementor-choices-label:nth-child(2) {
+    border-top-right-radius: 0px!important;
+    border-bottom-right-radius: 0px!important;
+    border-top-left-radius: var(--e-a-border-radius)!important;
+    border-bottom-left-radius: var(--e-a-border-radius)!important;
+    border-left: 1px solid var(--e-a-border-color-bold)!important;
+}
+.elementor-control-align .elementor-control-dynamic input {
+    border-top-right-radius: var(--e-a-border-radius)!important;
+    border-bottom-right-radius: var(--e-a-border-radius)!important;
+    border-top-left-radius: 0px!important;
+    border-bottom-left-radius: 0px!important;
+}
+.elementor-control-type-url .elementor-control-url-autocomplete-spinner {
+	right:auto;
+    left: 0;
+}
+.elementor-hotkeys__item--shortcut {
+    direction: ltr;
+}
+.elementor-hotkeys__item--shortcut kbd:not(:last-of-type):after {
+    right: 0;
+    left: auto!important;
+}
+
+/* Yoast SEO */
+.yoast-title {font-family: 'IRANYekanXVF';}
+

@@ -1,0 +1,2 @@
+<?php
+return ['x-generator'=>'GlotPress/4.0.3','translation-revision-date'=>'2020-03-01 17:02:36+0000','plural-forms'=>'nplurals=1; plural=0;','project-id-version'=>'Plugins - المنتور فارسی - Stable (latest release)','language'=>'fa','messages'=>['فونت فارسی'=>'فونت فارسی','المنتور فارسی'=>'المنتور فارسی']];

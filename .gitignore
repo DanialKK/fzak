@@ -1,10 +1,38 @@
+# Python / Django
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.log
+*.pot
+
+# محیط توسعه و دیتابیس
 .env
 venv/
+env/
+.env.local
 db.sqlite3
-/staticfiles
-/media
-/product
-.idea
-.vscode
+
+# فایل‌های جمع‌آوری شده و رسانه‌ها
+media/
+staticfiles/
+product/                # اگر فولدر خاصی بود که نمی‌خوای
+
+# IDE و فایل‌های سیستم
+.idea/
+.vscode/
+.DS_Store
+
+# WordPress – مهم‌ترین بخش برای جلوگیری از آپلود فایل‌های حجیم
+wordpress/wp-content/uploads/
+wordpress/wp-content/cache/
+wordpress/wp-content/upgrade/
+wordpress/wp-content/blogs.dir/
+wordpress/*.log
+wordpress/*.sql
+wordpress/*.sql.gz
+wordpress/wp-config.php
+
+# داکر و فایل‌های موقتی
+docker-compose.override.yml
+*.dockerignore
