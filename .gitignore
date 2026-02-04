@@ -16,7 +16,7 @@ db.sqlite3
 # فایل‌های جمع‌آوری شده و رسانه‌ها
 media/
 staticfiles/
-product/                # اگر فولدر خاصی بود که نمی‌خوای
+product/
 
 # IDE و فایل‌های سیستم
 .idea/
