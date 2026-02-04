@@ -23,15 +23,9 @@ product/                # اگر فولدر خاصی بود که نمی‌خوا
 .vscode/
 .DS_Store
 
-# WordPress – مهم‌ترین بخش برای جلوگیری از آپلود فایل‌های حجیم
-wordpress/wp-content/uploads/
-wordpress/wp-content/cache/
-wordpress/wp-content/upgrade/
-wordpress/wp-content/blogs.dir/
-wordpress/*.log
-wordpress/*.sql
-wordpress/*.sql.gz
-wordpress/wp-config.php
+# WordPress
+wordpress/*
+!wordpress/php.ini
 
 # داکر و فایل‌های موقتی
 docker-compose.override.yml
