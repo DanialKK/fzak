@@ -10,7 +10,9 @@ services:
       - "8000:8000"
     volumes:
       - ./django:/app
-      - ./django/db.sqlite3:/app/db.sqlite3
+    command: >
+      sh -c "python manage.py migrate --noinput || true && 
+             python manage.py runserver 0.0.0.0:8000"
     environment:
       ALLOWED_HOSTS: localhost,127.0.0.1,0.0.0.0
 
