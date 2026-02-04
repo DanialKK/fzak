@@ -1,10 +1,32 @@
+# Python / Django
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.log
+*.pot
+
+# محیط توسعه و دیتابیس
 .env
 venv/
+env/
+.env.local
 db.sqlite3
-/staticfiles
-/media
-/product
-.idea
-.vscode
+
+# فایل‌های جمع‌آوری شده و رسانه‌ها
+media/
+staticfiles/
+product/
+
+# IDE و فایل‌های سیستم
+.idea/
+.vscode/
+.DS_Store
+
+# WordPress
+wordpress/*
+!wordpress/php.ini
+
+# داکر و فایل‌های موقتی
+docker-compose.override.yml
+*.dockerignore

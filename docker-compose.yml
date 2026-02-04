@@ -1,0 +1,52 @@
+version: '3.9'
+
+services:
+  django:
+    build:
+      context: ./django
+    container_name: fzak_django
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./django:/app
+      - ./django/db.sqlite3:/app/db.sqlite3
+    environment:
+      ALLOWED_HOSTS: localhost,127.0.0.1,0.0.0.0
+
+  wordpress:
+    image: wordpress:latest
+    container_name: fzak_wordpress
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./wordpress:/var/www/html
+      - ./wordpress/php.ini:/usr/local/etc/php/conf.d/custom.ini
+    environment:
+      WORDPRESS_DB_HOST: wp_db
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wppass
+      WORDPRESS_DB_NAME: wpdb
+    depends_on:
+      - wp_db
+
+  wp_db:
+    image: mysql:8.0
+    container_name: fzak_wp_db
+    restart: unless-stopped
+    volumes:
+      - wp_db_data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: wpdb
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppass
+      MYSQL_ROOT_PASSWORD: rootpass
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  wp_db_data:
